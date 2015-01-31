@@ -369,6 +369,9 @@ public class World {
     if (isLocked()) {
       return;
     }
+    if (body.m_world != this) {
+      throw new RuntimeException("BAD BAD BAD!");
+    }
 
     // Delete the attached joints.
     JointEdge je = body.m_jointList;

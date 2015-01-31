@@ -90,7 +90,7 @@ public class Body {
   // Rotational inertia about the center of mass.
   public float m_I, m_invI;
 
-  public float m_linearDamping;
+  public Vec2 m_linearDamping;
   public float m_angularDamping;
   public float m_gravityScale;
 
@@ -104,7 +104,7 @@ public class Body {
     assert (bd.linearVelocity.isValid());
     assert (bd.gravityScale >= 0.0f);
     assert (bd.angularDamping >= 0.0f);
-    assert (bd.linearDamping >= 0.0f);
+    assert (bd.linearDamping.isValid());
 
     m_flags = 0;
 
@@ -842,12 +842,12 @@ public class Body {
   }
 
   /** Get the linear damping of the body. */
-  public final float getLinearDamping() {
+  public final Vec2 getLinearDamping() {
     return m_linearDamping;
   }
 
   /** Set the linear damping of the body. */
-  public final void setLinearDamping(float linearDamping) {
+  public final void setLinearDamping(Vec2 linearDamping) {
     m_linearDamping = linearDamping;
   }
 

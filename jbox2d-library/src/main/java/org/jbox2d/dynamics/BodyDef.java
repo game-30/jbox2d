@@ -70,7 +70,7 @@ public class BodyDef {
    * 1.0f but the damping effect becomes sensitive to the time step when the damping parameter is
    * large.
    */
-  public float linearDamping;
+  public Vec2 linearDamping;
 
   /**
    * Angular damping is use to reduce the angular velocity. The damping parameter can be larger than
@@ -120,7 +120,7 @@ public class BodyDef {
     angle = 0f;
     linearVelocity = new Vec2();
     angularVelocity = 0f;
-    linearDamping = 0f;
+    linearDamping = new Vec2();
     angularDamping = 0f;
     allowSleep = true;
     awake = true;
@@ -224,7 +224,7 @@ public class BodyDef {
    * 1.0f but the damping effect becomes sensitive to the time step when the damping parameter is
    * large.
    */
-  public float getLinearDamping() {
+  public Vec2 getLinearDamping() {
     return linearDamping;
   }
 
@@ -233,7 +233,7 @@ public class BodyDef {
    * 1.0f but the damping effect becomes sensitive to the time step when the damping parameter is
    * large.
    */
-  public void setLinearDamping(float linearDamping) {
+  public void setLinearDamping(Vec2 linearDamping) {
     this.linearDamping = linearDamping;
   }
 
